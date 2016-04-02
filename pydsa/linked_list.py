@@ -34,21 +34,21 @@ class linked_list(object):
 	Methods implemented:
 	
 	>>> list.is_empty() # Returns boolean.
+	True
+	>>> list.insert_at_start(4) # Returns null. params: value. Insert at beginning of list.
 	
-	>>> list.insert_at_start() # Returns null. params: value. Insert at beginning of list.
+	>>> list.insert_at_end(5) # Returns null. params: value. Insert at end of list.
 	
-	>>> list.insert_at_end() # Returns null. params: value. Insert at end of list.
-	
-	>>> list.find() # Returns node at which value is present.
+	>>> list.find(4) # Returns node at which value is present.
 		Else, raises ValueError
 		params: value. Search for element.
 	
-	>>> list.delete() # Returns null. params: value. delete element with value.
+	>>> list.delete(4) # Returns null. params: value. delete element with value.
 	
 	>>> list.length() # returns length of linked list
-	
+	1
 	>>> list.toString() # returns string containing elements in list.
-
+	1
 	"""
 	def __init__(self, head=None):
 		self.head = head
