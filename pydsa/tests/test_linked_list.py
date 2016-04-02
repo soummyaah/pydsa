@@ -1,30 +1,60 @@
+import unittest
 from pydsa import linked_list
+import logging
 
-def test_linked_list():
-	def __init__(self):
-		self.test_list = linked_list()
+class test_linked_list(unittest.TestCase):
 
-	def test_is_empty(self):
+	test_list = linked_list()
+
+	def steps(self):
+		for name in sorted(dir(self)):
+			if name.startswith("step"):
+				yield name, getattr(self, name)
+
+	def test_steps(self):
+		for name, step in self.steps():
+			try:
+				step()
+			except Exception as e:
+				self.fail("{} failed ({}: {})".format(step, type(e), e))
+
+	# Test is_empty
+	def step1(self):
 		self.assertTrue(self.test_list.is_empty() == True)
-		
-	def test_insert_at_start(self):
+
+	# Test insert_at_start
+	def step2(self):
 		self.test_list.insert_at_start(5)
+		# print(self.test_list.toString())
 		self.assertTrue(self.test_list.head.get_value() == 5)
 		self.assertTrue(self.test_list.head.get_next() == None)
 		self.assertTrue(self.test_list.is_empty() == False)
 
-	def test_insert_at_end(self, value):
-		self.test_list.insert_at_end(10)
+	# Test insert_at_end
+	def step3(self):
+		self.test_list.insert_at_end(6)
 		curr = self.test_list.head
 		while curr.get_next():
 			curr = curr.get_next()
-		self.assertTrue(curr.get_value() == 10)
-		self.assertTrue(curr.get_next() == None)		
-
-	# def test_find(self, value):
+		self.assertTrue(curr.get_value() == 6)
+		self.assertTrue(curr.get_next() == None)
 		
-	# def delete(self, value):
+	# Test find
+	def step4(self):
+		self.test_list.insert_at_start(4)
+		self.assertTrue(self.test_list.head == self.test_list.find(4))
 
-	# def length(self):
+	# Test delete
+	def step5(self):
+		self.assertTrue(self.test_list.find(4) == self.test_list.head)
+		self.test_list.delete(4)
+		self.assertRaises(ValueError, self.test_list.find, 4)
 
-	# def toString(self):
+	# Test length function
+	def step6(self):
+		self.assertTrue(self.test_list.length() == 2)
+		self.test_list.insert_at_start(3)
+		self.assertTrue(self.test_list.length() == 3)
+		self.test_list.delete(6)
+		self.assertTrue(self.test_list.length() == 2)
+		# def toString(self):
