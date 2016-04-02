@@ -4,10 +4,10 @@ class linked_list_node(object):
 		
 		Contains a value and a pointer to the next node. Both params are optional
 		
-		>>> temp = linked_list_node(5, linked_list_node())
-		>>> temp.value
+		temp = linked_list_node(5, linked_list_node())
+		temp.value
 		5
-		>>> temp.next_node
+		temp.next_node
 
 	"""
 	def __init__(self, value=None, next_node=None):
