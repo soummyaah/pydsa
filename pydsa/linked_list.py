@@ -1,4 +1,15 @@
 class linked_list_node(object):
+	"""
+		Node of a Singly Linked List.
+		
+		Contains a value and a pointer to the next node. Both params are optional
+		
+		>>> temp = linked_list_node(5, linked_list_node())
+		>>> temp.value
+		5
+		>>> temp.next_node
+
+	"""
 	def __init__(self, value=None, next_node=None):
 		self.value = value
 		self.next_node = next_node
@@ -13,6 +24,32 @@ class linked_list_node(object):
 		self.next_node = next_node
 
 class linked_list(object):
+	"""
+	Singly Linked List.
+
+	list.head is the header pointer of the list.
+
+	>>> list = linked_list()
+
+	Methods implemented:
+	
+	>>> list.is_empty() # Returns boolean.
+	
+	>>> list.insert_at_start() # Returns null. params: value. Insert at beginning of list.
+	
+	>>> list.insert_at_end() # Returns null. params: value. Insert at end of list.
+	
+	>>> list.find() # Returns node at which value is present.
+		Else, raises ValueError
+		params: value. Search for element.
+	
+	>>> list.delete() # Returns null. params: value. delete element with value.
+	
+	>>> list.length() # returns length of linked list
+	
+	>>> list.toString() # returns string containing elements in list.
+
+	"""
 	def __init__(self, head=None):
 		self.head = head
 

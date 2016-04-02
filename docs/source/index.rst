@@ -9,6 +9,7 @@ It is currently in it's initial phase of development.
 
    install.rst
    sorting.rst
+   datastructures.rst
    license.rst
 
 
