@@ -39,15 +39,15 @@ class linked_list(object):
 	
 	>>> list.insert_at_end(5) # Returns null. params: value. Insert at end of list.
 	
-	>>> list.find(4) # Returns node at which value is present.
-		Else, raises ValueError
-		params: value. Search for element.
+	list.find(4) # Returns node at which value is present.
+		# Else, raises ValueError
+		# params: value. Search for element.
 	
-	>>> list.delete(4) # Returns null. params: value. delete element with value.
+	list.delete(4) # Returns null. params: value. delete element with value.
 	
-	>>> list.length() # returns length of linked list
+	list.length() # returns length of linked list
 	1
-	>>> list.toString() # returns string containing elements in list.
+	list.toString() # returns string containing elements in list.
 	1
 	"""
 	def __init__(self, head=None):
