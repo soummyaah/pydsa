@@ -58,7 +58,7 @@ class LinkedList(object):
     >>> list.insert_at_start(2)
     >>> len(list) # returns length of linked list
     2
-    >>> print list # returns string containing elements in list.
+    >>> print(list) # returns string containing elements in list.
     [2] -> [5]
     """
     def __init__(self, head=None):
