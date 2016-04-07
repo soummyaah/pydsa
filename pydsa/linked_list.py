@@ -26,7 +26,7 @@ class LinkedListNode(object):
         self.next_node = next_node
 
     def __str__(self):
-        return "[%s]"%(str(self.value))
+        return "[%s]" %(str(self.value))
 
     def __repr__(self):
         return str(self)
@@ -47,14 +47,16 @@ class LinkedList(object):
 
     >>> list.insert_at_end(5) # Returns None. params: value. Insert at end of list.
 
-    >>> list.find(4) # Returns node at which value is present.
-        # Else, raises ValueError
-        # params: value. Node data to search for.
+    >>> list.find(4)
     [4]
+
+                     # Returns node at which value is present.
+                     # Else, raises ValueError
+                     # params: value. Node data to search for.
 
     >>> list.delete(4) # Returns None. params: value. delete element with value.
     >>> list.insert_at_start(2)
-    >>> list.length() # returns length of linked list
+    >>> len(list) # returns length of linked list
     2
     >>> print list # returns string containing elements in list.
     [2] -> [5]
@@ -72,6 +74,8 @@ class LinkedList(object):
         return
 
     def insert_at_end(self, value):
+        if not len(self):
+            return self.insert_at_start(value)
         curr_node = self.head
         while(curr_node.get_next() is not None):
             curr_node = curr_node.get_next()
@@ -107,7 +111,7 @@ class LinkedList(object):
         else:
             prev_node.set_next(curr_node.get_next())
 
-    def length(self):
+    def __len__(self):
         curr_node = self.head
         length = 0
         while curr_node:

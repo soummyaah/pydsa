@@ -1,4 +1,4 @@
-.. _sorting:
+.. _searching:
 
 Searching
 =======
