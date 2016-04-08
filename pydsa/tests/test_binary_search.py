@@ -1,7 +1,6 @@
 from pydsa.binary_search import binary_search
 from random import randint
 
-
 def test_binary_search():
     a = [randint(1, 10) for i in range(10)]
     item = randint(1, 10)
