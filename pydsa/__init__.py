@@ -9,4 +9,5 @@ from .bfs import bfs
 from .binary_search import binary_search
 from .linked_list import LinkedList
 from .linked_list import LinkedListNode
-
+from .linear_search import linear_search
+from .queue import queue
